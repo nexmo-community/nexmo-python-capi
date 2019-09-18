@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+server-mock.py
+private.key
+.nexmo-app
+.env
