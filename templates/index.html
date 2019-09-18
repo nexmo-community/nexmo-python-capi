@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Live Conversation Exporer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://cdn.rawgit.com/caldwell/renderjson/master/renderjson.js"></script>
+  </head>
+  <body>
+    <section class="section">
+      <div class="columns">
+
+        <!-- START: Conversation list navigation -->
+        <div class="column is-one-quarter">
+          <aside class="menu">
+            <p class="menu-label">
+              Conversations
+            </p>
+            <ul class="menu-list">
+              <li><a>Conversation ID</a></li>
+            </ul>
+          </aside>
+        </div>
+        <!-- END: Conversation list navigation -->
+
+        <!-- START: Conversation Detail -->
+        <div class="column">
+
+          <!-- START: Conversation Meta -->
+          <article class="message is-info">
+            <div class="message-header">
+              <p>Conversation name</p>
+            </div>
+            <div class="message-body">
+              <p>Conversation meta</p>
+            </div>
+          </article>
+          <!-- END: Conversation Meta -->
+
+          <!-- START: Members / Events tab navigation -->
+          <div class="tabs is-boxed">
+            <ul>
+              <li class="is-active">
+                <a>
+                  <span class="icon is-small"><i class="fas fa-user"></i></span>
+                  Members
+                </a>
+              </li>
+              <li>
+                <a>
+                  <span class="icon is-small"><i class="fab fa-elementor"></i></span>
+                  Events
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- END: Members / Events tab navigation -->
+
+
+          <!-- START: Members Tab -->
+          <div class="columns">
+            <!-- START: Members navigation -->
+            <div class="column is-one-fifth">
+              <aside class="menu">
+                <p class="menu-label">
+                  Members
+                </p>
+                <ul class="menu-list">
+                  <li>
+                    <a>
+                      John Smith
+                    </a>
+                  </li>
+                </ul>
+              </aside>
+            </div>
+            <!-- END: Members navigation -->
+
+            <!-- START: Member detail -->
+            <div class="column">
+              <div class="card">
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-left">
+                      <figure class="image is-96x96">
+                        <img src="https://api.adorable.io/avatars/96/asdadasd.png" class="is-rounded" alt="Avatar">
+                      </figure>
+                    </div>
+                    <div class="media-content">
+                      <p class="title is-4">John Smith</p>
+                      <p class="subtitle is-6">0123456789</p>
+                    </div>
+                  </div>
+
+                  <div class="content">
+                    <progress class="progress is-small is-primary" max="100" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- END: Member detail -->
+          </div>
+          <!-- END: Members Tab -->
+
+          <!-- START: Events Tab -->
+          <section class="section is-hidden">
+            <div class="container">
+
+              <!-- START: Event -->
+              <article class="message is-info">
+                <div class="message-header">
+                  <p>Event ID</p>
+                </div>
+                <div class="message-body" id="event-123"></div>
+              </article>
+              <!-- END: Event -->
+
+              <!-- START: Event -->
+              <article class="message is-info">
+                <div class="message-header">
+                  <p>Event ID</p>
+                </div>
+                <div class="message-body" id="event-456"></div>
+              </article>
+              <!-- END: Event -->
+
+            </div>
+          </section>
+          <!-- END: Events Tab -->
+
+        </div>
+        <!-- END: Conversation Detail -->
+
+      </div>
+    </section>
+
+    <script>
+      var data = {"body":{"channel":{"cpa":false,"cpa_time":5000,"from":{"headers":{},"number":"442036178240","type":"phone"},"headers":{},"id":"34eb880a-03ac-44fc-a084-5a9d1c0f2e3b","legs":[{"leg_id":"34eb880a-03ac-44fc-a084-5a9d1c0f2e3b","status":"started"}],"max_length":7200000,"preanswer":false,"ring_timeout":60000,"to":{"headers":{},"number":"18479623979","type":"phone"},"type":"phone"},"cname":"NAM-29a390f1-08f2-4eb0-8a81-f4270c3447a7","conversation":{"conversation_id":"CON-a75de643-8b0d-419b-8a69-e21e17fbebde","name":"NAM-29a390f1-08f2-4eb0-8a81-f4270c3447a7"},"initiator":{"invited":{"isSystem":true}},"invited_by":"USR-fa059861-71f9-4e76-9ef7-29e37373549b","media":{"audio":true,"audio_settings":{"earmuffed":false,"enabled":true,"muted":false}},"timestamp":{"invited":"2019-09-18T22:14:24.334Z"},"user":{"media":{"audio":true,"audio_settings":{"earmuffed":false,"enabled":true,"muted":false}},"member_id":"MEM-002f67df-885b-4df6-b807-006e923e9693","name":"vapi-user-8a875b8940fe48b99fa09685ca93633d","user_id":"USR-fa059861-71f9-4e76-9ef7-29e37373549b"}},"from":"MEM-002f67df-885b-4df6-b807-006e923e9693","href":"https://api.nexmo.com/beta/conversations/CON-a75de643-8b0d-419b-8a69-e21e17fbebde/events/1","id":1,"timestamp":"2019-09-18T22:14:24.620Z","type":"member:invited"}
+      var data2 = {"body":{"direction":"outbound","leg_id":"34eb880a-03ac-44fc-a084-5a9d1c0f2e3b","status":"ringing","statusHistory":[{"conversation_id":"CON-a75de643-8b0d-419b-8a69-e21e17fbebde","date":"2019-09-18T22:14:24.495Z","member_id":"MEM-002f67df-885b-4df6-b807-006e923e9693","status":"started"},{"conversation_id":"CON-a75de643-8b0d-419b-8a69-e21e17fbebde","date":"2019-09-18T22:14:25.917Z","member_id":"MEM-002f67df-885b-4df6-b807-006e923e9693","status":"ringing"}],"type":"phone"},"from":"MEM-002f67df-885b-4df6-b807-006e923e9693","href":"https://api.nexmo.com/beta/conversations/CON-a75de643-8b0d-419b-8a69-e21e17fbebde/events/2","id":2,"timestamp":"2019-09-18T22:14:26.102Z","type":"leg:status:update"}
+
+      document.getElementById("event-123").appendChild(
+        renderjson(data)
+      );
+
+      document.getElementById("event-456").appendChild(
+        renderjson(data2)
+      );
+    </script>
+  </body>
+</html>
