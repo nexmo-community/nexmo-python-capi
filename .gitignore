@@ -4,3 +4,4 @@ server-mock.py
 private.key
 .nexmo-app
 .env
+.vscode/
